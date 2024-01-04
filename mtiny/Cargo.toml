@@ -1,0 +1,29 @@
+[package]
+name = "mtiny"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+[dependencies]
+mtiny-core = { path = "../mtiny-core", version = "0.1.0" }
+mtiny-router = { path = "../mtiny-router", version = "0.1.0" }
+mtiny-middleware = { path = "../mtiny-middleware", version = "0.1.0", features = [
+    "core",
+] }
+mtiny-multipart = { path = "../mtiny-multipart", version = "0.1.0", optional = true }
+mtiny-server = { path = "../mtiny-server", version = "0.1.0", optional = true }
+#mtiny-sse = { path = "../mtiny-sse", version = "0.1.0", optional = true }
+
+mime = "0.3"
+bytes = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_urlencoded = "0.7"
+
+[features]
+default = ["server"]
+multipart = ["mtiny-multipart"]
+server = ["mtiny-server"]
+#sse = ["mtiny-sse"]
