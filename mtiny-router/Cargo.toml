@@ -1,0 +1,12 @@
+[package]
+name = "mtiny-router"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mtiny-core = { path = "../mtiny-core", version = "0.1.0" }
+
+matchit = "0.5"
+pin-project-lite = "0.2"
