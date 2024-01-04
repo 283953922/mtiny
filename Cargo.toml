@@ -1,0 +1,12 @@
+[workspace] 
+resolver = "2" 
+members = [
+    "mtiny",
+    "mtiny-http",
+    "mtiny-core",
+    "mtiny-service",
+    "mtiny-multipart",
+    "mtiny-middleware",
+    "mtiny-router",
+    "mtiny-server",
+]

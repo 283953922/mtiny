@@ -1,0 +1,24 @@
+[package]
+name = "mtiny-server"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mtiny-core = { path = "../mtiny-core", version = "0.1.0" }
+
+actix-http = { version = "3", features = ["http2"], optional = true }
+actix-server = { version = "2", optional = true }
+actix-service = { version = "2", optional = true }
+
+tokio = { version = "1", default-features = false }
+futures-core = "0.3"
+pin-project-lite = "0.2"
+
+[dev-dependencies]
+tokio = { version = "1", default-features = false, features = ["test-util"] }
+
+[features]
+default = ["actix"]
+actix = ["actix-http", "actix-server", "actix-service"]
